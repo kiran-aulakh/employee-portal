@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/header %>
+</head>
+
+<body>
+    <% include ../partials/navigation %>
+    <div class="container">
+        <div class="card card-primary">
+            <div class="card-body">
+                <div class="card-header">
+                    Vacancies
+                </div>
+                <div class="card-text">
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Project</th>
+                            <th scope="col">Technology</th>
+                            <th scope="col">Role</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i < Vacancies.length; i++) { %>
+                          <tr>
+                            <th scope="row"><%= i+1 %></th>
+                            <td><%= Vacancies[i].project %></td>
+                            <td><%= Vacancies[i].technology %></td>
+                            <td><%= Vacancies[i].role %></td>
+                            <td>
+                            <td> <a type="btn btn-primary btn-sm" href="get/<%= Vacancies[i]._id %>" >View Details </a> </td>
+                            <td> <% if(showUpdateButton === true){ %>
+                                <a href="/vacancy/update/<%= Vacancies[i]._id %>" class="btn btn-primary">Update</a>
+                                <% } %>
+                            </td>
+                          </tr>
+                             <% } %>
+                        </tbody>
+                      </table>
+                      
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<% include ../partials/footer %>
+
+</html>

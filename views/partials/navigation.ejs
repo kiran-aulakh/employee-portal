@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+        Home
+      </a>
+
+      <ul class="nav navbar-nav">
+        <li><a href="/vacancy/all">List all</a></li>
+        <li><a href="/vacancy/post">Create vacancy</a></li>
+        <% if(loggedIn === false ){ %>
+        <li><a href="/auth/register">Register</a></li>
+        <% } %>
+        <% if(loggedIn === false ){ %>
+        <li><a href="/auth/login">Login</a></li>
+        <% } %>
+        <% if(loggedIn === true ){ %>
+        <li><a href="/auth/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+
+  </div>
+</nav>

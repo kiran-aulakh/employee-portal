@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/header %>
+</head>
+
+<body class="container">
+
+  <header>
+    <% include ../partials/navigation %>
+  </header>
+
+
+  <form action="/posts/createorupdate" method="POST">
+    <input type="hidden" name="_id" value="<%- user._id%>">
+    First Name: <input type="text" name="firstName" value="<%- user.firstName%>"><br><br>
+    Last Name: <input type="text" name="lastName" value="<%- user.lastName%>"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+
+<footer class="page-footer">
+  <% include ../partials/footer %>
+</footer>
+
+</html>

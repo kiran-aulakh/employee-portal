@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/header %>
+</head>
+<body>
+    <% include ../partials/navigation %>
+    <div class="container py-3">
+        <div class="row">
+            <div class="mx-auto col-sm-6">
+    <div class="container">
+        <div class="card card-primary">
+            <div class="card-header">
+                <center>
+                <h2 class="mb-0">Post new vacancy</h2>
+            </center>
+            <br><br>
+            </div>
+            <div class="card-body">
+                <div class="card-body">
+                    <form class="create-form" action="/vacancy/post" method="post"  autocomplete="off">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Project name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text"" id="project" name="project" class="form-control"
+                                        <% if(typeof vacancy !== 'undefined') {%> value="<%= vacancy.project %>" <% } %>
+                                        placeholder="Vacancy required" required="">
+                                    <% if(typeof projectErr !== 'undefined') {%>
+                                    <span class="err"><%= projectErr.msg %> </span>
+                                    <% } %>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Client name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text"" id="client" name="client" class="form-control"
+                                <% if(typeof vacancy !== 'undefined') {%> value="<%= vacancy.client %>" <% } %>
+                                placeholder="Vacancy required" required="">
+                            <% if(typeof clientErr !== 'undefined') {%>
+                            <span class="err"><%= clientErr.msg %> </span>
+                            <% } %>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Technology</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text"" id="technology" name="technology" class="form-control"
+                                <% if(typeof vacancy !== 'undefined') {%> value="<%= vacancy.technology %>" <% } %>
+                                placeholder="Technology required" required="">
+                            <% if(typeof technologyErr !== 'undefined') {%>
+                            <span class="err"><%= technologyErr.msg %> </span>
+                            <% } %>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Role</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text"" id="role" name="role" class="form-control"
+                                <% if(typeof vacancy !== 'undefined') {%> value="<%= vacancy.role %>" <% } %>
+                                placeholder="Role required" required="">
+                            <% if(typeof roleErr !== 'undefined') {%>
+                            <span class="err"><%= roleErr.msg %> </span>
+                            <% } %>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Job description</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text"" id="description" name="description" class="form-control"
+                                <% if(typeof vacancy !== 'undefined') {%> value="<%= vacancy.description %>" <% } %>
+                                placeholder="Description required" required="">
+                            <% if(typeof descriptionErr !== 'undefined') {%>
+                            <span class="err"><%= descriptionErr.msg %> </span>
+                            <% } %>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Status</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="status" name="status" class="form-control"
+                                <% if(typeof vacancy !== 'undefined') {%> value="<%= vacancy.status %>" <% } %>
+                                placeholder="Status required" required="">
+                            <% if(typeof statusErr !== 'undefined') {%>
+                            <span class="err"><%= statusErr.msg %> </span>
+                            <% } %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <center>
+                            <button class="btn btn-sm btn-primary center" type="submit">Post</button>
+                        </center>
+                        <br><br>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+<% include ../partials/footer %>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/header %>
+</head>
+
+<body class="container">
+
+  <header>
+    <% include ../partials/navigation %>
+  </header>
+
+  <%= message %>
+  <table>
+    <% if(userList){ %>
+    <% userList.forEach(function(user){ %>
+    <tr>
+      <td>
+        <h3>
+          <%= user.firstName %>
+          <%= user.lastName %><br />
+        </h3>
+      </td>
+      <% if(fromDb){ %>
+      <td>
+        <form action="/usersfromdb/update/<%= user._id%>">
+          <input type="submit" name="Update" value="Update" />
+        </form>
+      </td>
+      <td>
+        <form action="/usersfromdb/delete/<%= user._id%>" method="post">
+          <input type="submit" name="Delete" value="Delete" />
+        </form>
+      </td>
+    </tr>
+    <% }; %>
+    <% }); %>
+    <% } %>
+
+  </table>
+</body>
+<% include ../partials/footer %>
+
+</html>

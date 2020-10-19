@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/header %>
+</head>
+<body>
+    <% include ../partials/navigation %>
+    <div class="card text-center">
+        <div class="card-header">
+         <h2> Apply for post <%= vacancy.role %></h2>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Job description</h3><br><br>
+          <p class="card-text">Project : <%= vacancy.project %></p>
+          <p class="card-text">Client : <%= vacancy.client %></p>
+          <p class="card-text">Technology : <%= vacancy.technology %></p>
+          <p class="card-text">Role : <%= vacancy.role %></p>
+          <p class="card-text">Description : <%= vacancy.description %></p>
+          <p class="card-text">Status : <%= vacancy.status %></p>   
+          <p class="card-text">Created By : <%= vacancy.createdby %></p>
+          
+          <% if(showApplyButton === true ){ %>
+          <a href="/vacancy/apply/<%= vacancy._id %>" class="btn btn-primary">Apply</a>
+          <% } %>
+        </div>
+
+      </div>
+
+</body>
+<% include ../partials/footer %>
+
+</html>
+
+
